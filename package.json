@@ -1,0 +1,15 @@
+{
+  "name": "get-color-pallete-by-screenshot-of-url",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "colorthief": "^2.4.0",
+    "puppeteer": "^19.9.1"
+  }
+}
