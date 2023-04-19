@@ -11,9 +11,7 @@
   "dependencies": {
     "chrome-aws-lambda": "^10.1.0",
     "colorthief": "^2.4.0",
-    "puppeteer-core": "^19.9.1"
-  },
-  "devDependencies": {
-    "puppeteer": "^19.9.1"
+    "dotenv": "^16.0.3",
+    "puppeteer-core": "^10.4.0"
   }
 }
