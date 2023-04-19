@@ -19,6 +19,7 @@ exports.handler = async (event) => {
       executablePath:
         process.env.CHROME_EXECUTABLE_PATH || (await chromium.executablePath),
       headless: true,
+      ignoreDefaultArgs: ["--disable-extensions"],
     });
 
     const page = await browser.newPage();
