@@ -1,4 +1,5 @@
-const chromium = require('chrome-aws-lambda');
+const chromium = require("chrome-aws-lambda");
+const puppeteer = require("puppeteer-core");
 
 const ColorThief = require('colorthief');
 
@@ -14,11 +15,12 @@ exports.handler = async (event) => {
 
 	try {
 		
-		const browser = await chromium.puppeteer.launch({
-			executablePath: await chromium.executablePath,
-			args: chromium.args,
-			defaultViewport: chromium.defaultViewport,
-			headless: chromium.headless,
+		const executablePath = await chromium.executablePath;
+
+		const browser = await puppeteer.launch({
+		  args: chromium.args,
+		  executablePath: executablePath,
+		  headless: chromium.headless,
 		});
 	
 		const page = await browser.newPage();
