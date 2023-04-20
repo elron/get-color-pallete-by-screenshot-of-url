@@ -1,4 +1,3 @@
 [functions]
-
-# Flags "package-1" as an external node module for all functions.
-external_node_modules = ["@sparticuz/chromium"]
+    # Flags "package-1" as an external node module for all functions.
+    external_node_modules = ["@sparticuz/chromium"]
