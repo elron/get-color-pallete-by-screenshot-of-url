@@ -1,7 +1,7 @@
 const chromium = require("@sparticuz/chromium");
 const puppeteer = require("puppeteer-core");
 
-// chromium.setHeadlessMode = true;
+chromium.setHeadlessMode = true;
 chromium.setGraphicsMode = false;
 
 const ColorThief = require("colorthief");
