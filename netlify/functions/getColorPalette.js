@@ -22,6 +22,8 @@ exports.handler = async (event) => {
     };
   }
 
+  console.log('url is fine');
+
   try {
     const browser = await puppeteer.launch({
       args: chromium.args,
@@ -29,6 +31,8 @@ exports.handler = async (event) => {
       executablePath: await chromium.executablePath(),
       headless: chromium.headless,
     });
+
+	console.log('browser created');
 
     const page = await browser.newPage();
     await page.goto(url);
