@@ -1,5 +1,8 @@
-const puppeteer = require("puppeteer-core");
 const chromium = require("@sparticuz/chromium");
+const puppeteer = require("puppeteer-core");
+
+chromium.setHeadlessMode = true;
+chromium.setGraphicsMode = false;
 
 const ColorThief = require("colorthief");
 
@@ -22,17 +25,18 @@ exports.handler = async (event) => {
     };
   }
 
-  console.log('url is fine');
+  console.log("url is fine");
 
   try {
     const browser = await puppeteer.launch({
       args: chromium.args,
       defaultViewport: chromium.defaultViewport,
-      executablePath: await chromium.executablePath(),
+      executablePath:
+        process.env.CHROME_EXECUTABLE_PATH || (await chromium.executablePath()),
       headless: chromium.headless,
     });
 
-	console.log('browser created');
+    console.log("browser created");
 
     const page = await browser.newPage();
     await page.goto(url);
