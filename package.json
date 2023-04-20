@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "buffer-to-data-url": "^1.0.0",
     "chrome-aws-lambda": "^10.1.0",
     "colorthief": "^2.4.0",
     "dotenv": "^16.0.3",
