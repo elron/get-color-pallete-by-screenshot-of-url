@@ -45,14 +45,14 @@ exports.handler = async (event) => {
 
     // const img = resolve(process.cwd(), 'rainbow.png');
 
-    let imageColor;
-    await ColorThief.getColor(imageURL)
-      .then((color) => {
-        imageColor = color;
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    // let imageColor;
+    // await ColorThief.getColor(imageURL)
+    //   .then((color) => {
+    //     imageColor = color;
+    //   })
+    //   .catch((err) => {
+    //     console.log(err);
+    //   });
 
     let imagePallete;
     await ColorThief.getPalette(imageURL, 5)
@@ -63,10 +63,11 @@ exports.handler = async (event) => {
         console.log(err);
       });
 
-    console.log({imageColor});
-    console.log({imagePallete});
+    // console.log({ imageColor });
+    console.log({ imagePallete });
     // [0,1,2] // rgb array
     const hexColors = imagePallete.map((rgbArray) => rgbToHex(rgbArray));
+    // console.log("hexColor", rgbToHex(imageColor));
     console.log("hexColors", hexColors);
     // const hexColors = colors.map(
     //   (color) =>
