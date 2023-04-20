@@ -28,8 +28,8 @@ exports.handler = async (event) => {
     // for development.
     const browser = await chromium.puppeteer.launch({
       args: await chromium.args,
-      executablePath: process.env.PUPPETEER_EXECUTABLE_PATH,
-      //   executablePath: executablePath || process.env.PUPPETEER_EXECUTABLE_PATH,
+    //   executablePath: process.env.PUPPETEER_EXECUTABLE_PATH,
+        executablePath: executablePath || process.env.PUPPETEER_EXECUTABLE_PATH,
       headless: true,
     });
 
