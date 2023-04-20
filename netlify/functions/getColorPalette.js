@@ -23,13 +23,15 @@ exports.handler = async (event) => {
 
   try {
     const executablePath = await chromium.executablePath;
+	console.log('executablePath', executablePath);
 
     // PUPPETEER_EXECUTABLE_PATH is set from my Dockerfile to /usr/bin/chromium-browser
     // for development.
     const browser = await chromium.puppeteer.launch({
       args: await chromium.args,
     //   executablePath: process.env.PUPPETEER_EXECUTABLE_PATH,
-        executablePath: process.env.PUPPETEER_EXECUTABLE_PATH || executablePath,
+        executablePath: executablePath,
+        // executablePath: process.env.PUPPETEER_EXECUTABLE_PATH || executablePath,
       headless: true,
     });
 
