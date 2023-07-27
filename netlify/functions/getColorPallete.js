@@ -1,4 +1,4 @@
-import { getHexColors } from "./helpers/getHexColors";
+import { getHexColors } from "./helpers/getHexColors.js";
 
 export async function handler(event) {
   const url = event.queryStringParameters.url;
