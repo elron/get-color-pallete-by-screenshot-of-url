@@ -14,6 +14,7 @@ async function arrayBufferToBuffer(arrayBuffer) {
 
 export async function getHexColors___url_thumbio_image_getImageColors(url) {
   const imageURL = `http://image.thum.io/get/width/1200/auth/67497-4874b446276eb76c6ee94b6c2442bc25/${url}`;
+  console.log('imageURL', imageURL);
   try {
     const response = await fetch(imageURL);
     if (!response.ok) {
