@@ -1,6 +1,6 @@
 import { getHexColors } from "./helpers/getHexColors";
 
-export const handler = async (event) => {
+export async function handler(event) {
   const url = event.queryStringParameters.url;
 
   if (!url) {
