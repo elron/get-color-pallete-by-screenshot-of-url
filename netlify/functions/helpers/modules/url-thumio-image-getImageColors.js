@@ -18,13 +18,16 @@ export async function getHexColors___url_thumbio_image_getImageColors(url) {
   try {
     const response = await fetch(imageURL);
     if (!response.ok) {
+      console.log('failed fetch image');
       throw new Error(
         `Failed to fetch image: ${response.status} ${response.statusText}`
       );
     }
 
     const arrayBuffer = await response.arrayBuffer();
+    console.log('arrayBuffer', arrayBuffer);
     const imageBuffer = await arrayBufferToBuffer(arrayBuffer);
+    console.log('imageBuffer', imageBuffer);
     const colors = await getImageColors(imageBuffer, "image/png");
 
     const hexColors = colors.map((color) => color.hex());
