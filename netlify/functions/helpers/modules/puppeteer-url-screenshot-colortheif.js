@@ -1,10 +1,13 @@
-const chromium = require("@sparticuz/chromium");
-const puppeteer = require("puppeteer-core");
+// const chromium = require("@sparticuz/chromium");
+// const puppeteer = require("puppeteer-core");
+import chromium from "@sparticuz/chromium";
+import puppeteer from "puppeteer-core";
+import ColorThief from "colorthief";
+
+// const ColorThief = require("colorthief");
 
 chromium.setHeadlessMode = true;
 chromium.setGraphicsMode = false;
-
-const ColorThief = require("colorthief");
 
 const rgbToHex = ([r, g, b]) =>
   "#" +
@@ -15,18 +18,7 @@ const rgbToHex = ([r, g, b]) =>
     })
     .join("");
 
-exports.handler = async (event) => {
-  const url = event.queryStringParameters.url;
-
-  if (!url) {
-    return {
-      statusCode: 400,
-      body: "Missing URL parameter",
-    };
-  }
-
-  console.log("url is fine");
-
+export async function getHexColors___puppeteer_url_screenshot_colorthief() {
   try {
     const browser = await puppeteer.launch({
       args: chromium.args,
@@ -78,20 +70,12 @@ exports.handler = async (event) => {
     //   (color) =>
     //     `#${color.map((c) => c.toString(16).padStart(2, "0")).join("")}`
     // );
-
-    return {
-      statusCode: 200,
-      body: JSON.stringify(hexColors),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    };
+    return hexColors;
   } catch (error) {
-    console.error(error);
-
-    return {
-      statusCode: 500,
-      body: "Internal Server Error",
-    };
+    console.error(
+      "error in getHexColors___puppeteer_url_screenshot_colorthief():",
+      error
+    );
+    throw error;
   }
-};
+}
