@@ -13,8 +13,7 @@ export async function handler(event) {
   console.log("url is fine");
 
   try {
-    // const hexColors = await getHexColors(url);
-    const hexColors = "hi";
+    const hexColors = await getHexColors(url);
 
     return {
       statusCode: 200,
@@ -31,4 +30,4 @@ export async function handler(event) {
       body: "Internal Server Error",
     };
   }
-}
+};
