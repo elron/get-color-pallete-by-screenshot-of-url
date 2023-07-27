@@ -1,4 +1,6 @@
-import { JSDOM } from 'jsdom';
+// import JSDOM from 'jsdom';
+import jsdom from "jsdom";
+const { JSDOM } = jsdom;
 import { ColorTranslator } from 'colortranslator';
 
 function appendDomain(domain, url) {
