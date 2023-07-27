@@ -1,6 +1,8 @@
 import getImageColors from "get-image-colors";
 // const getColors = require('get-image-colors');
 
+import fetch from "node-fetch";
+
 async function arrayBufferToBuffer(arrayBuffer) {
   const buffer = Buffer.alloc(arrayBuffer.byteLength);
   const view = new Uint8Array(arrayBuffer);
