@@ -24,13 +24,14 @@ function runPromises(promises) {
 }
 
 export async function getHexColors(url) {
-  const hexColorsTries = [
-    // getHexColors___url_css_files_popular_hex(url),
-    // getHexColors___puppeteer_url_screenshot_colorthief(url),
-    getHexColors___url_thumbio_image_getImageColors(url),
-  ];
-  const hexColors = await runPromises(hexColorsTries);
+  // const hexColorsTries = [
+  //   getHexColors___url_css_files_popular_hex(url),
+  //   getHexColors___puppeteer_url_screenshot_colorthief(url),
+  //   getHexColors___url_thumbio_image_getImageColors(url),
+  // ];
+  // const hexColors = await runPromises(hexColorsTries);
 
-  console.log("DONE!!!!!! hexColors:", hexColors);
-  return hexColors;
+  // console.log("DONE!!!!!! hexColors:", hexColors);
+  // return hexColors;
+  return ['test', 'worked'];
 }
