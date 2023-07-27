@@ -1,10 +1,10 @@
-// const chromium = require("@sparticuz/chromium");
-// const puppeteer = require("puppeteer-core");
-// const ColorThief = require("colorthief");
+const chromium = require("@sparticuz/chromium");
+const puppeteer = require("puppeteer-core");
+const ColorThief = require("colorthief");
 
-import chromium from "@sparticuz/chromium";
-import puppeteer from "puppeteer-core";
-import ColorThief from "colorthief";
+// import chromium from "@sparticuz/chromium";
+// import puppeteer from "puppeteer-core";
+// import ColorThief from "colorthief";
 
 
 chromium.setHeadlessMode = true;
