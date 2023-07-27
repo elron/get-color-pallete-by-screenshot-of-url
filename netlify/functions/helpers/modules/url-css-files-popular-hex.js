@@ -4,6 +4,9 @@ import { JSDOM } from "jsdom";
 
 // import sanitizeHtml from "sanitize-html";
 
+import fetch from "node-fetch";
+
+
 import { ColorTranslator } from "colortranslator";
 
 function appendDomain(domain, url) {
