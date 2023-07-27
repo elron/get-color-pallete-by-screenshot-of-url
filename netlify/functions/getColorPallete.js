@@ -1,4 +1,4 @@
-import { getHexColors } from "./helpers/getHexColors.js";
+// import { getHexColors } from "./helpers/getHexColors.js";
 
 export async function handler(event) {
   const url = event.queryStringParameters.url;
@@ -13,7 +13,8 @@ export async function handler(event) {
   console.log("url is fine");
 
   try {
-    const hexColors = await getHexColors(url);
+    // const hexColors = await getHexColors(url);
+    const hexColors = "hi";
 
     return {
       statusCode: 200,
@@ -30,4 +31,4 @@ export async function handler(event) {
       body: "Internal Server Error",
     };
   }
-};
+}
