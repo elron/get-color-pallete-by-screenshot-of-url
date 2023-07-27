@@ -1,14 +1,9 @@
-const chromium = require("@sparticuz/chromium");
-const puppeteer = require("puppeteer-core");
-const ColorThief = require("colorthief");
-
-// import chromium from "@sparticuz/chromium";
-// import puppeteer from "puppeteer-core";
-// import ColorThief from "colorthief";
-
+import chromium from "@sparticuz/chromium";
+import puppeteer from "puppeteer-core";
+import ColorThief from "colorthief";
 
 chromium.setHeadlessMode = true;
-chromium.setGraphicsMode = false;
+chromium.setGraphicsMode =false;
 
 const rgbToHex = ([r, g, b]) =>
   "#" +
@@ -19,7 +14,7 @@ const rgbToHex = ([r, g, b]) =>
     })
     .join("");
 
-export async function getHexColors___puppeteer_url_screenshot_colorthief() {
+export async function getHexColors___puppeteer_url_screenshot_colorthief(url) {
   try {
     const browser = await puppeteer.launch({
       args: chromium.args,
@@ -33,7 +28,8 @@ export async function getHexColors___puppeteer_url_screenshot_colorthief() {
 
     const page = await browser.newPage();
     await page.goto(url);
-    const screenshotBuffer = await page.screenshot({ fullPage: true });
+    // const screenshotBuffer = await page.screenshot({ fullPage: true });
+    const screenshotBuffer = await page.screenshot();
     await browser.close();
     // console.log('screenshotBuffer', screenshotBuffer);
 
@@ -52,19 +48,19 @@ export async function getHexColors___puppeteer_url_screenshot_colorthief() {
     //     console.log(err);
     //   });
 
-    let imagePallete;
+    let imagePalette;
     await ColorThief.getPalette(imageURL, 5)
       .then((palette) => {
-        imagePallete = palette;
+        imagePalette = palette;
       })
       .catch((err) => {
         console.log(err);
       });
 
     // console.log({ imageColor });
-    console.log({ imagePallete });
+    console.log({ imagePalette });
     // [0,1,2] // rgb array
-    const hexColors = imagePallete.map((rgbArray) => rgbToHex(rgbArray));
+    const hexColors = imagePalette.map((rgbArray) => rgbToHex(rgbArray));
     // console.log("hexColor", rgbToHex(imageColor));
     console.log("hexColors", hexColors);
     // const hexColors = colors.map(
