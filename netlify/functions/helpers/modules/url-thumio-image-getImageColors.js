@@ -1,5 +1,4 @@
-// import getImageColors from "get-image-colors";
-// const getColors = require('get-image-colors');
+import getImageColors from "get-image-colors";
 
 import fetch from "node-fetch";
 
