@@ -1,6 +1,6 @@
-// import JSDOM from 'jsdom';
-import jsdom from "jsdom";
-const { JSDOM } = jsdom;
+import { JSDOM } from "jsdom";
+// import jsdom from "jsdom";
+// const { JSDOM } = jsdom;
 
 // import sanitizeHtml from "sanitize-html";
 
@@ -18,11 +18,10 @@ export async function getHexColors___url_css_files_popular_hex(url) {
   const response = await fetch(url);
   const html = await response.text();
 
-//   const htmlLinks = sanitizeHtml(html, {
-//     allowedTags: [`link`],
-//     allowedAttributes: false,
-//   });
-
+  //   const htmlLinks = sanitizeHtml(html, {
+  //     allowedTags: [`link`],
+  //     allowedAttributes: false,
+  //   });
 
   /**
    * JSDOM
@@ -32,7 +31,6 @@ export async function getHexColors___url_css_files_popular_hex(url) {
   const cssFiles = [
     ...dom.window.document.querySelectorAll('link[rel="stylesheet"]'),
   ].map((link) => link.href);
-
 
   const cssUrls = cssFiles.map((cssUrl) => appendDomain(url, cssUrl));
 
