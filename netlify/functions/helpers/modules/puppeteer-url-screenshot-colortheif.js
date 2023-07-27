@@ -3,7 +3,7 @@ import puppeteer from "puppeteer-core";
 import ColorThief from "colorthief";
 
 chromium.setHeadlessMode = true;
-chromium.setGraphicsMode =false;
+chromium.setGraphicsMode = false;
 
 const rgbToHex = ([r, g, b]) =>
   "#" +
@@ -55,6 +55,7 @@ export async function getHexColors___puppeteer_url_screenshot_colorthief(url) {
       })
       .catch((err) => {
         console.log(err);
+        throw err;
       });
 
     // console.log({ imageColor });
